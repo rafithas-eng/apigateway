@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "32cd2016-0706-4b6a-bf49-ef9abfc9ab36",
+		"name": "Impacta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3028849"
+	},
+	"item": [
+		{
+			"name": "Gel All Parts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gel All Parts with Code",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peca/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peca",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gel All Parts with Code into Component",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peca/1/componente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peca",
+						"1",
+						"componente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Part",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"Peca A\",\r\n    \"codigo\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/peca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"peca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Part Component Itens",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sku\":\"TTT00000111111\",\r\n  \"descricao\":\"parafuso\",\r\n  \"preco\":5.0,\r\n  \"quantidade\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3300/api/v1/peca/1/componente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3300",
+					"path": [
+						"api",
+						"v1",
+						"peca",
+						"1",
+						"componente"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

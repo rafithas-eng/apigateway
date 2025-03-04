@@ -1,0 +1,34 @@
+{
+  "name": "apigateway",
+  "version": "1.0.0",
+  "description": "api de trabalho da faculdade impacta ",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/index",
+    "test": "npm test "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafithas-eng/apigateway.git).git"
+  },
+  "keywords": [
+    "API",
+    "Impacta",
+    "Gateway"
+  ],
+  "author": "Rafael Clementino Araujo Soares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafithas-eng/apigateway.git)/issues"
+  },
+  "homepage": "https://github.com/rafithas-eng/apigateway.git)#readme",
+  "dependencies": {
+    "@prisma/client": "^6.4.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "prisma": "^6.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
