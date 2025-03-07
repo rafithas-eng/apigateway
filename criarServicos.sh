@@ -1,16 +1,19 @@
-#!  /usr/bin/ksh
+#!  /usr/bin/bash
 
 #   cria o servico Produtos
 PAYLOAD=$( cat <<JSON 
 {
-    "name": "Pecas",
-    "url": "http://localhost:3000/api/v1/peca",
+    "name": "Pecas4",
+    "uri": "http://localhost:3000/api/v1/peca",
     "enabled": true
 }
 JSON
 )
 
-curl -i -X POST localhost:8001/services --data "${PAYLOAD}"
+curl -i -X POST localhost:8001/services  --data "${PAYLOAD}" | echo ${PAYLOAD}
+SERVICEID=$(curl -i -X POST localhost:8001/services  --data "${PAYLOAD}" | grep -o '"id":"[^"]*' | grep -o '[^"]*$' )
+echo ${SERVICEID}
+
 
 
 #   cria o servico Produtos
@@ -29,9 +32,22 @@ PAYLOAD=$( cat <<JSON
     "request_buffering": true,
     "response_buffering": true,
     "tags": ["user-level", "low-priority"],
-    "service": {"id":"$service-id"}
+    "service": {"id":"${SERVICEID}"}
 }
 JSON
 )
+echo ${PAYLOAD}
+curl -i -X POST localhost:8001/routes -h 'Content-Type: application/json' --data "${PAYLOAD}" 
 
 
+        "code":2,
+        "fields":
+        {"
+            {    
+                "name": "Pecas",    
+                "url": "http://localhost:3000/api/v1/peca\",
+                "enabled": true
+            }":"unknown field",
+            "host":"required field missing"
+        },
+        "message":"2 schema violations (host: required field missing; {\n    \"name\": \"Pecas\",\n    \"url\": \"http://localhost:3000/api/v1/peca\",\n    \"enabled\": true\n}: unknown field)","name":"schema violation"}

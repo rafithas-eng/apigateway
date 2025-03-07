@@ -31,16 +31,11 @@ Run the following command to start the Postgree, and Kong container:
 
 ```sh
 docker-compose -f 'docker-compose.yml' up -d --build 
+docker run -d  'kong-migrations' 
+docker run -d  'kong' 
 ```
 
-### 4. Generate Prisma Client
-
-Run the following command to generate the Prisma Client:
-```sh
-npx prisma generate
-```
-
-### 5. Migrate the database
+### 4. Migrate the database
 
 Run the following command to apply the migrations and set up your database schema:
 
@@ -48,13 +43,24 @@ Run the following command to apply the migrations and set up your database schem
 npx prisma migrate dev --name init
 ```
 
-### 6. Start the server
+### 5. Start the server
 
 ```sh
 npm start
 ```
 
 The server will start running on `http://localhost:3000`.
+
+
+### 6. Genetared Routes 
+
+```sh
+./criarServicos.sh
+```
+
+Create product Peca - http://localhost:3000/api/v1/peca
+
+Create route Peca - http://localhost:8000/v1/gateway/peca
 
 ## API Endpoints
 

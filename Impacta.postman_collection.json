@@ -7,132 +7,141 @@
 	},
 	"item": [
 		{
-			"name": "Gel All Parts",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/peca",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"peca"
-					]
-				}
-			},
-			"response": []
+			"name": "Puro",
+			"item": []
 		},
 		{
-			"name": "Gel All Parts with Code",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/peca/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"peca",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Gel All Parts with Code into Component",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/api/v1/peca/1/componente",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"peca",
-						"1",
-						"componente"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Part",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nome\":\"Peca A\",\r\n    \"codigo\":1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "KONG",
+			"item": [
+				{
+					"name": "Gel All Parts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8000/v1/gateway/peca",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"gateway",
+								"peca"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/api/v1/peca",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"api",
-						"v1",
-						"peca"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Part Component Itens",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"sku\":\"TTT00000111111\",\r\n  \"descricao\":\"parafuso\",\r\n  \"preco\":5.0,\r\n  \"quantidade\":1\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Gel All Parts with Code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8000/v1/gateway/peca/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"gateway",
+								"peca",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3300/api/v1/peca/1/componente",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3300",
-					"path": [
-						"api",
-						"v1",
-						"peca",
-						"1",
-						"componente"
-					]
+				{
+					"name": "Gel All Parts with Code into Component",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:8000/v1/gateway/peca/1/componente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"gateway",
+								"peca",
+								"1",
+								"componente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Part",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\":\"Peca B\",\r\n    \"codigo\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8000/v1/gateway/peca",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"gateway",
+								"peca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Part Component Itens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sku\":\"TTT00000111111\",\r\n  \"descricao\":\"parafuso\",\r\n  \"preco\":5.0,\r\n  \"quantidade\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:8000/v1/gateway/peca/1/componente",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"gateway",
+								"peca",
+								"1",
+								"componente"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

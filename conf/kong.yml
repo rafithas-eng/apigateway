@@ -2,18 +2,18 @@ _format_version: "3.0"
 _transform: true
 
 services:
-  - name: Produtos
+  - name: PECA
     protocol: http
-    host: 192.168.68.112
-    port: 8080
-    path: /api/v1/produto
+    host: localhost
+    port: 3000
+    path: /api/v1/peca
     routes:
-      - name: Produtos
+      - name: Pecas
         methods:
           - GET
             POST
             PATCH
             DELETE
         paths:
-          - /v1/gateway/produto
+          - /v1/gateway/peca
         strip_path: true
