@@ -3,16 +3,16 @@
 #   cria o servico Produtos
 PAYLOAD=$( cat <<JSON 
 {
-    "name": "Pecas4",
+    "name": "Peca",
     "uri": "http://localhost:3000/api/v1/peca",
     "enabled": true
 }
 JSON
 )
 
-curl -i -X POST localhost:8001/services  --data "${PAYLOAD}" | echo ${PAYLOAD}
+
 SERVICEID=$(curl -i -X POST localhost:8001/services  --data "${PAYLOAD}" | grep -o '"id":"[^"]*' | grep -o '[^"]*$' )
-echo ${SERVICEID}
+
 
 
 
@@ -36,7 +36,7 @@ PAYLOAD=$( cat <<JSON
 }
 JSON
 )
-echo ${PAYLOAD}
+
 curl -i -X POST localhost:8001/routes -h 'Content-Type: application/json' --data "${PAYLOAD}" 
 
 
